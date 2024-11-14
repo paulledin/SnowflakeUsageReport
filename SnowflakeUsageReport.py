@@ -333,44 +333,10 @@ else:
 
         if (selected_report_type == 'Affiliation'):
             st.markdown('#### Affiliation Changes')
-        
-            affiliation_type = ['Legacy CUNA','Legacy NAFCU', 'Either / At least 1 Legacy Org']
-            selected_affiliation_type = st.selectbox('Affiliation Type', affiliation_type)
-            st.markdown('---')
-        
-            if (selected_affiliation_type == 'Legacy CUNA'):
-                df_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'cuna')
-                df_disafl_chgs = getAFLChgsTables(selected_month, 'DISAFL', 'cuna')
-            elif (selected_affiliation_type == 'Legacy NAFCU'):
-                df_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'nafcu')
-                df_disafl_chgs = getAFLChgsTables(selected_month, 'DISAFL', 'nafcu')
-            else:
-                df_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'either')
-                df_disafl_chgs = getAFLChgsTables(selected_month, 'DISAFL', 'either')
-            
-            st.markdown('#### Reaffiliations - ' + selected_affiliation_type)
-            st.dataframe(data = df_reafl_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
-            st.markdown('#### Disaffiliations - ' + selected_affiliation_type)
-            st.dataframe(data = df_disafl_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
 
         elif (selected_report_type == 'Name'):
             st.markdown('#### Name Changes')
-            st.dataframe(data = df_name_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')    
+  
         elif (selected_report_type == 'Address'):
             st.markdown('#### Mailing Address Changes')
 
