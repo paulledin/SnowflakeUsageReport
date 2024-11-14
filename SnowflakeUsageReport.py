@@ -29,6 +29,7 @@ def get_information_schema(databaseName):
 #Start building Streamlit App
 ###############################################################################
 thePassPhrase = st.secrets["thePassPhrase"]
+dbName = 'ACUS_DATA'
 
 with st.sidebar:
     st.markdown('![alt text](https://raw.githubusercontent.com/paulledin/data/master/ACUS.jpg)')
@@ -39,7 +40,10 @@ if (passphrase != thePassPhrase):
         st.markdown('# Passphrase not correct....')
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
-    information_schema = get_information_schema('ACUS_DATA')
+    information_schema = get_information_schema(dbName)
+
+    st.write('## Database = ' + dbName)
+    
     st.write(information_schema)
     
      
