@@ -13,53 +13,6 @@ import altair as alt
 ###############################################################################
 #Function Definitions
 ###############################################################################
-def convertDateToDisplay(date):
-    switcher = {
-        "01": "January",
-        "02": "February",
-        "03": "March",
-        "04": "April",
-        "05": "May",
-        "06": "June",
-        "07": "July",
-        "08": "August",
-        "09": "September",
-        "10": "October",
-        "11": "November",
-        "12": "December",
-    }
-    
-    return switcher.get(date[4:], "**Bad Month**") + "-" + date[:4]
-
-def convertDateToSystem(date):
-    switcher = {
-        "January":  "01",
-        "February": "02",
-        "March":    "03",
-        "April":    "04",
-        "May":      "05",
-        "June":     "06",
-        "July":     "07",
-        "August":   "08",
-        "September":"09",
-        "October":  "10",
-        "November": "11",
-        "December": "12",
-    }
-    
-    return date[len(date)-4:len(date)] + switcher.get(date[:len(date)-5], "**Bad Month**")
-
-def get_report_periods():
-    periods = pd.read_csv('https://raw.githubusercontent.com/paulledin/data/master/MonthlyReportPeriods.csv')
-    
-    retVal = list()
-    index = 0
-    for x in periods:
-        retVal.insert(index, periods[x])
-        index += 1
-    
-    return (retVal)
-
 def getMergersTable(month):
     df_mergers_table = pd.DataFrame(pd.read_csv('https://raw.githubusercontent.com/paulledin/data/master/merged_cus_' + convertDateToSystem(month) + '.csv', dtype={
                                                 'NIMBLE_CUNA_ID': 'string',
