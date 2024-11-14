@@ -44,7 +44,8 @@ else:
         selected_db_name = st.selectbox('Database', database_name)
     
     information_schema = get_information_schema(selected_db_name)
-    st.write('### -- Number of Schemas: ' + len(pd.unique(information_schema['TABLE_SCHEMA'])))
+    st.write('### -- Number of Schemas: ')
+    n = len(pd.unique(information_schema['TABLE_SCHEMA']))
     #n = len(pd.unique(df['height']))
 
     #st.write(information_schema)
