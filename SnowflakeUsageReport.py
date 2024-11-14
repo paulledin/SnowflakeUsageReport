@@ -297,30 +297,6 @@ else:
     }
      
 
-    col = st.columns((1.5, 6.5), gap='medium')
-    with col[0]:          
-        st.markdown('### Summary')
-    
-    with col[1]:
-        st.markdown('#### Details')
-
-        if (selected_report_type == 'Affiliation'):
-            st.markdown('#### Affiliation Changes')
-
-        elif (selected_report_type == 'Name'):
-            st.markdown('#### Name Changes')
-  
-        elif (selected_report_type == 'Address'):
-            st.markdown('#### Mailing Address Changes')
-
-        elif (selected_report_type == 'Miscellaneous'):
-            st.markdown('#### Manager Changes')
-        
-        elif (selected_report_type == 'New'):
-            st.markdown('#### New Credit Unions')
-            
-        else:
-            st.markdown('#### Merged Credit Unions')
 
 
     
