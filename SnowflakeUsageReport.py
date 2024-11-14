@@ -13,12 +13,25 @@ import altair as alt
 ###############################################################################
 #Function Definitions
 ###############################################################################
+@st.cache_data
+def get_report_periods_fromDB():
+    session = conn.session()
+    retVal = session.sql("SELECT substr(TABLE_NAME, 21, 26) as \"period\" FROM monthly_report.information_schema.tables WHERE table_schema = 'BOTH' and TABLE_NAME like 'AFL_TABLE_1_BYSTATE_%' ").to_pandas()
+    
+    return retVal
+
+report_periods = get_report_periods_fromDB()
+st.write(report_periods)
+
+
+
 def format_number(amount):
     return '{:,.0f}'.format(amount)
 
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
+conn = st.connection("snowflake")
 thePassPhrase = 'PeopleNotProfit$'
 
 st.set_page_config(
