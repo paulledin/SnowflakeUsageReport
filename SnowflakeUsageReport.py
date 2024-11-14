@@ -24,6 +24,16 @@ st.set_page_config(
 ###############################################################################
 #Function Definitions
 ###############################################################################
+def get_report_periods():
+    periods = pd.read_csv('https://raw.githubusercontent.com/paulledin/data/master/MonthlyReportPeriods.csv')
+    
+    retVal = list()
+    index = 0
+    for x in periods:
+        retVal.insert(index, periods[x])
+        index += 1
+    
+    return (retVal)
 
 
 
