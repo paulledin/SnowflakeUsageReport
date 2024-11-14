@@ -10,6 +10,7 @@ import pandas as pd
 import numpy as np
 import altair as alt
 
+conn = st.connection("snowflake")
 ###############################################################################
 #Function Definitions
 ###############################################################################
@@ -31,7 +32,6 @@ def format_number(amount):
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
-conn = st.connection("snowflake")
 thePassPhrase = 'PeopleNotProfit$'
 
 st.set_page_config(
