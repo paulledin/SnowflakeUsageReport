@@ -22,7 +22,7 @@ dbConn = st.connection("snowflake")
 @st.cache_data
 def get_information_schema(databaseName):
     session = dbConn.session()
-    retVal = session.sql("SELECT TABLE_SCHEMA, TABLE_NAME FROM " + databaseName + ".information_schema.tables WHERE table_type!='VIEW' ").to_pandas()
+    retVal = session.sql("SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_OWNER, ROW_COUNT, BYTES, CREATED, LAST_ALTERED FROM " + databaseName + ".information_schema.tables WHERE table_type!='VIEW' ").to_pandas()
     
     return retVal
 ###############################################################################
