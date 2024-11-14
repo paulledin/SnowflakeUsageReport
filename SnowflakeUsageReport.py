@@ -40,6 +40,11 @@ if (passphrase != thePassPhrase):
         st.markdown('# Passphrase not correct....')
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
+    with st.sidebar:
+        st.title('Database Name:')
+        database_name = ['ACUS_DATA','NCUA_DATA', 'HMDA_DATA']
+        selected_db_name = st.selectbox('Affiliation Type', selected_db)
+    
     information_schema = get_information_schema(dbName)
 
     st.write('# Contents of Database: ')
