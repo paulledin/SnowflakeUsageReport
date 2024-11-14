@@ -25,10 +25,6 @@ def get_report_periods_fromDB():
     retVal = session.sql("SELECT substr(TABLE_NAME, 21, 26) as \"period\" FROM monthly_report.information_schema.tables WHERE table_schema = 'BOTH' and TABLE_NAME like 'AFL_TABLE_1_BYSTATE_%' ").to_pandas()
     
     return retVal
-
-def format_number(amount):
-    return '{:,.0f}'.format(amount)
-
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
@@ -47,69 +43,6 @@ else:
     report_periods = get_report_periods_fromDB()
     st.write(report_periods)
     
-    column_configuration = {
-        "State": st.column_config.TextColumn(
-            "State", max_chars=50
-            ),
-        "Affiliated CUs": st.column_config.NumberColumn(
-            "Affiliated CUs",
-            min_value=0,
-            max_value=10000,
-            ),
-        "Non Affiliated CUs": st.column_config.NumberColumn(
-            "Non Affiliated CUs",
-            min_value=0,
-            max_value=10000,
-            ),
-        "State Chartered": st.column_config.NumberColumn(
-            "State Chartered",
-            min_value=0,
-            max_value=10000,
-            ),
-        "Fed Chartered": st.column_config.NumberColumn(
-            "Fed Chartered",
-            min_value=0,
-            max_value=10000,
-            ),
-        "Total CUs": st.column_config.NumberColumn(
-        "Total CUs",
-        min_value=0,
-        max_value=10000,
-        ),
-    "Affiliated Memberships": st.column_config.NumberColumn(
-        "Affiliated Memberships",
-        min_value=0,
-        max_value=10000,
-        ),
-    "Affiliated Assets": st.column_config.NumberColumn(
-        "Affiliated Assets",
-        min_value=0,
-        max_value=10000,
-        ),
-    "Total Assets": st.column_config.NumberColumn(
-        "Total Assets",
-        min_value=0,
-        max_value=10000,
-        ),
-    "% CUs Affiliated": st.column_config.NumberColumn(
-        "% CUs Affiliated",
-        min_value=0,
-        max_value=10000,
-        format="%.1f"
-        ),
-    "% Memberships Affiliated": st.column_config.NumberColumn(
-        "% Memberships Affiliated",
-        min_value=0,
-        max_value=10000,
-        format="%.1f"
-        ),
-    "% Assets Affiliated": st.column_config.NumberColumn(
-        "% Assets Affiliated",
-        min_value=0,
-        max_value=10000,
-        format="%.1f"
-        ),
-    }
      
 
 
