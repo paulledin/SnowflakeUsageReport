@@ -22,7 +22,7 @@ dbConn = st.connection("snowflake")
 @st.cache_data
 def get_information_schema(databaseName):
     session = dbConn.session()
-    retVal = session.sql("SELECT TABLE_SCHEMA, TABLE_NAME FROM acus_data.information_schema.tables ").to_pandas()
+    retVal = session.sql("SELECT TABLE_SCHEMA, TABLE_NAME FROM " + databaseName + ".information_schema.tables ").to_pandas()
     
     return retVal
 ###############################################################################
@@ -39,8 +39,8 @@ if (passphrase != thePassPhrase):
         st.markdown('# Passphrase not correct....')
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
-    report_periods = get_information_schema('ACUS_DATA')
-    st.write(report_periods)
+    information_schema = get_information_schema('ACUS_DATA')
+    st.write(information_schema)
     
      
 
