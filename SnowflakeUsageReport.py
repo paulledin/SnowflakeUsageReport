@@ -26,11 +26,6 @@ def get_report_periods_fromDB():
     
     return retVal
 
-#report_periods = get_report_periods_fromDB()
-#st.write(report_periods)
-
-
-
 def format_number(amount):
     return '{:,.0f}'.format(amount)
 
@@ -48,7 +43,10 @@ if (passphrase != thePassPhrase):
     if len(passphrase) > 0:
         st.markdown('# Passphrase not correct....')
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
-else:  
+else:
+    report_periods = get_report_periods_fromDB()
+    st.write(report_periods)
+    
     column_configuration = {
         "State": st.column_config.TextColumn(
             "State", max_chars=50
