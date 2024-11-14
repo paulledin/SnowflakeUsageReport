@@ -21,8 +21,8 @@ def get_report_periods_fromDB():
     
     return retVal
 
-report_periods = get_report_periods_fromDB()
-st.write(report_periods)
+#report_periods = get_report_periods_fromDB()
+#st.write(report_periods)
 
 
 
