@@ -41,7 +41,6 @@ if (passphrase != thePassPhrase):
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
     with st.sidebar:
-        st.title('Database Name:')
         database_name = ['ACUS_DATA','NCUA_DATA', 'HMDA_DATA']
         selected_db_name = st.selectbox('Database', database_name)
     
