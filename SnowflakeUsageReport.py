@@ -47,7 +47,7 @@ else:
     information_schema = get_information_schema(dbName)
 
     st.write('# Contents of Database: ')
-    st.write('## -- ' + dbName)
+    st.write('## -- ' + selected_db_name)
     st.write('### ---- Number of Schemas: ')
     
     #st.write(information_schema)
