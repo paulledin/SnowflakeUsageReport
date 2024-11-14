@@ -44,7 +44,7 @@ else:
         database_name = ['ACUS_DATA','NCUA_DATA', 'HMDA_DATA']
         selected_db_name = st.selectbox('Database', database_name)
     
-    information_schema = get_information_schema(database_name)
+    information_schema = get_information_schema(selected_db_name)
     st.write('### -- Number of Schemas: ')
     
     #st.write(information_schema)
