@@ -45,8 +45,8 @@ else:
     
     information_schema = get_information_schema(selected_db_name)
     
-    st.write('### -- Number of Schemas: ' + str(len(pd.unique(information_schema['TABLE_SCHEMA']))))
-    st.write('### -- Number of Tables: ' + str(len(pd.unique(information_schema['TABLE_NAME']))))
+    st.write('## -- Number of Schemas: ' + str(len(pd.unique(information_schema['TABLE_SCHEMA']))))
+    st.write('### ---- Number of Tables: ' + str(len(pd.unique(information_schema['TABLE_NAME']))))
 
     #st.write(information_schema)
     
