@@ -46,9 +46,8 @@ else:
     information_schema = get_information_schema(selected_db_name)
 
     n = len(pd.unique(information_schema['TABLE_SCHEMA']))
-    st.write(n)
     
-    st.write('### -- Number of Schemas: ' + str(n))
+    st.write('### -- Number of Schemas: ' + str(len(pd.unique(information_schema['TABLE_SCHEMA']))))
     
     #n = len(pd.unique(df['height']))
 
