@@ -20,7 +20,7 @@ conn = st.connection("snowflake")
 #Function Definitions
 ###############################################################################
 @st.cache_data
-def get_report_periods_fromDB():
+def get_information_schema(databaseName):
     session = conn.session()
     retVal = session.sql("SELECT substr(TABLE_NAME, 21, 26) as \"period\" FROM monthly_report.information_schema.tables WHERE table_schema = 'BOTH' and TABLE_NAME like 'AFL_TABLE_1_BYSTATE_%' ").to_pandas()
     
@@ -40,7 +40,7 @@ if (passphrase != thePassPhrase):
         st.markdown('# Passphrase not correct....')
         st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
 else:
-    report_periods = get_report_periods_fromDB()
+    report_periods = get_information_schema('ACUS_DATA')
     st.write(report_periods)
     
      
