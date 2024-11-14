@@ -19,7 +19,7 @@ st.set_page_config(
 ###############################################################################
 @st.cache_data
 def get_information_schema(dbConn, databaseName):
-    session = conn.session()
+    session = dbConn.session()
     retVal = session.sql("SELECT substr(TABLE_NAME, 21, 26) as \"period\" FROM monthly_report.information_schema.tables WHERE table_schema = 'BOTH' and TABLE_NAME like 'AFL_TABLE_1_BYSTATE_%' ").to_pandas()
     
     return retVal
