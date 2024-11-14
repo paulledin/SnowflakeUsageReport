@@ -414,25 +414,6 @@ else:
             
         else:
             st.markdown('#### Merged Credit Unions')
-            st.dataframe(data = df_mergers, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
-            st.markdown('#### Pending Merger/Liquidation Credit Unions')
-            st.dataframe(data = df_pending, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
-            st.markdown('#### Liquidated Credit Unions')
-            st.dataframe(data = df_liquidated, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
+
 
     
