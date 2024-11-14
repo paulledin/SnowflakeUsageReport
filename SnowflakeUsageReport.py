@@ -323,13 +323,8 @@ else:
     with col[0]:          
         st.markdown('### Summary')
     
-        df_cuna_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'cuna')
-        df_nafcu_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'nafcu')
-        df_either_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'either')
-
     with col[1]:
         st.markdown('#### Details')
-        st.markdown('---')
 
         if (selected_report_type == 'Affiliation'):
             st.markdown('#### Affiliation Changes')
