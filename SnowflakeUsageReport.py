@@ -28,7 +28,6 @@ def get_report_periods_fromDB():
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
-#thePassPhrase = 'PeopleNotProfit$'
 thePassPhrase = st.secrets["thePassPhrase"]
 
 
