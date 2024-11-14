@@ -43,7 +43,7 @@ else:
     with st.sidebar:
         st.title('Database Name:')
         database_name = ['ACUS_DATA','NCUA_DATA', 'HMDA_DATA']
-        selected_db_name = st.selectbox('Affiliation Type', selected_db)
+        selected_db_name = st.selectbox('Database', database_name)
     
     information_schema = get_information_schema(dbName)
 
