@@ -22,7 +22,7 @@ dbConn = st.connection("snowflake")
 @st.cache_data
 def get_information_schema(databaseName):
     session = dbConn.session()
-    retVal = session.sql("SELECT substr(TABLE_NAME, 21, 26) as \"period\" FROM monthly_report.information_schema.tables WHERE table_schema = 'BOTH' and TABLE_NAME like 'AFL_TABLE_1_BYSTATE_%' ").to_pandas()
+    retVal = session.sql("SELECT TABLE_SCHEMA, TABLE_NAME FROM acus_data.information_schema.tables ").to_pandas()
     
     return retVal
 ###############################################################################
