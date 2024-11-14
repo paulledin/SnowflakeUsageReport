@@ -48,7 +48,7 @@ else:
     n = len(pd.unique(information_schema['TABLE_SCHEMA']))
     st.write(n)
     
-    st.write('### -- Number of Schemas: ' + n)
+    st.write('### -- Number of Schemas: ' + str(n))
     
     #n = len(pd.unique(df['height']))
 
