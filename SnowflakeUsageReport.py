@@ -9,7 +9,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import altair as alt
-#import plotly.express as px
 
 ###############################################################################
 #Function Definitions
@@ -327,17 +326,6 @@ else:
         df_cuna_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'cuna')
         df_nafcu_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'nafcu')
         df_either_reafl_chgs = getAFLChgsTables(selected_month, 'REAFL', 'either')
-    
-        st.markdown('**Reaffiliations**')
-        st.markdown('*Reaffiliations(CUNA):* ' + '**' + str(len(df_cuna_reafl_chgs)-1) + '**')
-        st.markdown('*Members:* ' + '**' + str(format_number(df_cuna_reafl_chgs.iloc[len(df_cuna_reafl_chgs) - 1, 4])) + '**')
-        st.markdown('---')
-        st.markdown('*Reaffiliations(NAFCU):* ' + '**' + str(len(df_nafcu_reafl_chgs)-1) + '**')
-        st.markdown('*Members:* ' + '**' + str(format_number(df_nafcu_reafl_chgs.iloc[len(df_nafcu_reafl_chgs) - 1, 4])) + '**')
-        st.markdown('---')
-        st.markdown('*Reaffiliations(Either):* ' + '**' + str(len(df_either_reafl_chgs)-1) + '**')
-        st.markdown('*Members:* ' + '**' + str(format_number(df_either_reafl_chgs.iloc[len(df_either_reafl_chgs) - 1, 4])) + '**')
-        st.markdown('---')
 
     with col[1]:
         st.markdown('#### Details')
