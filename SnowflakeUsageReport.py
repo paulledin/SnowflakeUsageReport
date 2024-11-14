@@ -373,44 +373,12 @@ else:
             st.markdown('---')    
         elif (selected_report_type == 'Address'):
             st.markdown('#### Mailing Address Changes')
-            st.dataframe(data = df_mailing_address_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
-            st.markdown('#### Street Address Changes')
-            st.dataframe(data = df_street_address_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
-        
+
         elif (selected_report_type == 'Miscellaneous'):
             st.markdown('#### Manager Changes')
-            st.dataframe(data = df_ceo_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
-            st.markdown('#### Charter Changes')
-            st.dataframe(data = df_charter_chgs, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
         
         elif (selected_report_type == 'New'):
             st.markdown('#### New Credit Unions')
-            st.dataframe(data = df_new_cus, 
-                         column_config=column_configuration,
-                         use_container_width = True, 
-                         hide_index = True,
-                         )
-            st.markdown('---')
             
         else:
             st.markdown('#### Merged Credit Unions')
