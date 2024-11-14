@@ -296,14 +296,6 @@ else:
         ),
     }
      
-    with st.sidebar:
-        st.title('Monthly Change Reports')
-    
-        report_type = ['Status','Affiliation', 'Name', 'Address', 'Miscellaneous', 'New']
-        selected_report_type = st.selectbox('Report Type', report_type)
-    
-        month = report_periods['report_periods_formatted']
-        selected_month = st.selectbox('Month', month)
 
     col = st.columns((1.5, 6.5), gap='medium')
     with col[0]:          
