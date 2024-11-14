@@ -216,8 +216,6 @@ def format_number(amount):
 ###############################################################################
 thePassPhrase = 'PeopleNotProfit$'
 
-report_periods = get_report_periods_for_display()  
-
 st.set_page_config(
     page_title="America's Credit Unions",
     layout="wide",
