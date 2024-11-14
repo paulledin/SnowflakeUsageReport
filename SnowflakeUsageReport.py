@@ -42,9 +42,9 @@ if (passphrase != thePassPhrase):
 else:
     information_schema = get_information_schema(dbName)
 
-    st.write('## Database = ' + dbName)
+    st.write('### Contents of Database: ' + dbName)
     
-    st.write(information_schema)
+    #st.write(information_schema)
     
      
 
