@@ -44,6 +44,7 @@ else:
 
     st.write('# Contents of Database: ')
     st.write('## -- ' + dbName)
+    st.write('### ---- Number of Schemas: ')
     
     #st.write(information_schema)
     
