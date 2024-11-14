@@ -30,17 +30,17 @@ st.set_page_config(
 ###############################################################################
 #Start building Streamlit App
 ###############################################################################
-thePassPhrase = st.secrets["thePassPhrase"]
-with st.sidebar:
-    st.markdown('![alt text](https://raw.githubusercontent.com/paulledin/data/master/ACUS.jpg)')
-    passphrase = st.text_input("### Please enter the passphrase:")
+#thePassPhrase = st.secrets["thePassPhrase"]
+#with st.sidebar:
+#    st.markdown('![alt text](https://raw.githubusercontent.com/paulledin/data/master/ACUS.jpg)')
+#    passphrase = st.text_input("### Please enter the passphrase:")
 
-if (passphrase != thePassPhrase):
-    if len(passphrase) > 0:
-        st.markdown('# Passphrase not correct....')
-        st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
-else:
-    with st.sidebar:
-        st.title('Snowflake Usage Report')
+#if (passphrase != thePassPhrase):
+#    if len(passphrase) > 0:
+#        st.markdown('# Passphrase not correct....')
+#        st.markdown('### Please try again or contact: pledin@americascreditunions.org for assistance.')
+#else:
+#    with st.sidebar:
+#        st.title('Snowflake Usage Report')
     
  
